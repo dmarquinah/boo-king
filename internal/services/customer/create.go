@@ -11,7 +11,8 @@ import (
 func (s Service) Create(customer domain.Customer) (id interface{}, err error) {
 
 	// Set creation time
-	customer.CreationTime = time.Now().UTC()
+	now := time.Now().UTC()
+	customer.CreatedAt = &now
 
 	insertedId, err := s.CustomerRepository.Insert(customer)
 	if err != nil {
