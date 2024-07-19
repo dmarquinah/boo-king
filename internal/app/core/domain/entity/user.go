@@ -1,10 +1,10 @@
-package domain
+package entity
 
 import "time"
 
-type Customer struct {
-	Name      string     `json:"name" bson:"name"`
+type User struct {
 	Email     string     `json:"email" bson:"email"`
+	Password  string     `json:"password" bson:"password"`
 	CreatedAt *time.Time `json:"created_at" bson:"created_at"`
 	UpdatedAt *time.Time `json:"updated_at" bson:"updated_at"`
 }

@@ -3,16 +3,15 @@ package customer
 import (
 	"fmt"
 	"log"
-	"time"
 
-	"github.com/dmarquinah/boo-king/internal/domain"
+	"github.com/dmarquinah/boo-king/internal/app/core/domain/entity"
 )
 
-func (s Service) Create(customer domain.Customer) (id interface{}, err error) {
+func (s Service) Create(customer entity.Customer) (id interface{}, err error) {
 
 	// Set creation time
-	now := time.Now().UTC()
-	customer.CreatedAt = &now
+	//now := time.Now().UTC()
+	//customer.CreatedAt = &now
 
 	insertedId, err := s.CustomerRepository.Insert(customer)
 	if err != nil {
